@@ -33,7 +33,7 @@
                
                 <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>
                 <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelop fa-fw w3-margin-right"></i>CONTACT</a>
-                  
+                 
               </div>
             </div>   
   </div>
@@ -43,7 +43,7 @@
   <!-- Header -->
   <header>
       <div class="w3-container ">  
-                <h1 style="text-align: center;color: black;font-family: Bahnschrift">WELCOME TO THE TOY WORLD
+                <h1 style="text-align: center;color: black;font-family: Bahnschrift">WELCOM TO THE TOY WORLD
                 </h1>
         <div class="w3-content" style="max-width:2000px;margin-top:46px">
           <div class="mySlides w3-display-container w3-center">
@@ -59,6 +59,17 @@
       </div>
   </header>
   <!--End of Header -->
+  <div class="w3-white" id="Product">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="Product">
+      <h2 class="w3-wide w3-center" style="color: black">Product</h2>
+      <br>
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+        <img src="images/Pizza.jpg" class="w3-round w3-image w3-opacity-min" alt="minato" width="302" height="218">
+        </div>
+        <h4 style="color: black"><b>WHAT IS TOY?</b></h4>
+        <p>A toy is an item that is used in play, especially one designed for such use. Playing with toys can be an enjoyable means of training young children for life in society. Different materials like wood, clay, paper, and plastic are used to make toys.</p> 
+        <p>Many items are designed to serve as toys, but goods produced for other purposes can also be used. For instance, a small child may fold an ordinary piece of paper into an airplane shape and "fly it". Newer forms of toys include interactive digital entertainment. Some toys are produced primarily as collectors' items and are intended for display only.</p>
+  <hr>
         
 
   <!-- ABOUT -->
@@ -120,34 +131,34 @@
         <i class="fa fa-twitter w3-hover-opacity"></i>
         <div class="copyright_text copyright_col w3-center">Copyright © 2019 The ATN Shop. All rights reserved.</div><!-- End page content -->
 
-	<script>
-		// Script to open and close sidebar
-		function w3_open() {
-		    document.getElementById("mySidebar").style.display = "block";
-		    document.getElementById("myOverlay").style.display = "block";
-		}
-		 
-		function w3_close() {
-		    document.getElementById("mySidebar").style.display = "none";
-		    document.getElementById("myOverlay").style.display = "none";
-		}
-	</script>
+  <script>
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
+     
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
+  </script>
 
-	<script>
-		var myIndex = 0;
-		carousel();
+  <script>
+    var myIndex = 0;
+    carousel();
 
-		function carousel() {
-		  var i;
-		  var x = document.getElementsByClassName("mySlides");
-		  for (i = 0; i < x.length; i++) {
-		    x[i].style.display = "none";  
-		  }
-		  myIndex++;
-		  if (myIndex > x.length) {myIndex = 1}    
-		  x[myIndex-1].style.display = "block";  
-		  setTimeout(carousel, 3000); // Change image every 5 seconds
-		}
-	</script>
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 3000); // Change image every 5 seconds
+    }
+  </script>
 </body>
 </html>
