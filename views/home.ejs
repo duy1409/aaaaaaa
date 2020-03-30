@@ -59,17 +59,20 @@
       </div>
   </header>
   <!--End of Header -->
+  <% data.rows.forEach(function(item){ %>
   <div class="w3-white" id="Product">
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="Product">
       <h2 class="w3-wide w3-center" style="color: black">Product</h2>
       <br>
         <div class="w3-col m6 w3-padding-large w3-hide-small">
-        <img src="images/Pizza.jpg" class="w3-round w3-image w3-opacity-min" alt="minato" width="302" height="218">
+        <img src="images/%>= item.image <%" class="w3-round w3-image w3-opacity-min" alt="minato" width="302" height="218">
         </div>
-        <h4 style="color: black"><b>WHAT IS TOY?</b></h4>
-        <p>A toy is an item that is used in play, especially one designed for such use. Playing with toys can be an enjoyable means of training young children for life in society. Different materials like wood, clay, paper, and plastic are used to make toys.</p> 
-        <p>Many items are designed to serve as toys, but goods produced for other purposes can also be used. For instance, a small child may fold an ordinary piece of paper into an airplane shape and "fly it". Newer forms of toys include interactive digital entertainment. Some toys are produced primarily as collectors' items and are intended for display only.</p>
+        <h4 style="color: black"><b>%>= item.name <%</b></h4>
+        <p>%>= item.description <%</p>
   <hr>
+
+  <%})%> 
+  
         
 
   <!-- ABOUT -->
