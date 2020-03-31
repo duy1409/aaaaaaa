@@ -15,19 +15,21 @@ var config = {
 	idleTimeoutMillis: 30000,
 
 };
+
 var bodyParser = require('body-parser');
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+var urlencodeParser = bodyParser.urlencoded({ extended: false });
 
-var multer  = require('multer');
+var multer = require('multer');
 
 var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './upload')
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname)
-  }
+	destination: function (req, file, cb){
+		cb(null, './upload')
+	},
+	filename: function (req, file, cb) {
+		cb(null, file.originalname)
+	}
+
 })
 
 var upload = multer({ storage: storage }).single('uploadfile');
@@ -98,13 +100,12 @@ app.get("/product/add", function(req,res){
 	res.render("add");
 });
 
-app.post("/product/add",urlencodedParser, function(req,res){
-	upload(req, res, function (err) {
-		if (err) {
+app.post("/product/add",urlencodeParser, function(req,res){
+	upload(req, res, function(err){
+		if (err){
 			res.send("loi");
 		}else{
 			res.send("ok");
-			console.log(req.file);
 		}
 	})
 })
