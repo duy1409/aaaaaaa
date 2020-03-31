@@ -105,7 +105,28 @@ app.post("/product/add",urlencodeParser, function(req,res){
 		if (err){
 			res.send("loi");
 		}else{
-			res.send("ok");
+			if(req.file == undefined){
+				res.send("file chua duoc chon");
+			}else{
+				pool.connect(function(err, client, done){
+		if(err){
+			return console.error('error fetching client from pool', err);
+		}
+		var sql = "insert into product (name, description, image) values('"+req.body.name+"','"+req.body.description+"','"+req.body.name+"','"+req.file.originalname+"')";
+		client.query(sql, function(err, result){
+			done();
+
+			if(err) {
+				res.end();
+				return console.error('error running query', err);
+
+			}
+			res.redirect("../list");
+		});
+
+	});
+			}
+			
 		}
 	})
 })
