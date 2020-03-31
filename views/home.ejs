@@ -33,6 +33,7 @@
                
                 <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>
                 <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelop fa-fw w3-margin-right"></i>CONTACT</a>
+                <a href="list.ejs" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelop fa-fw w3-margin-right"></i>PRODUCT</a>
                  
               </div>
             </div>   
@@ -59,20 +60,6 @@
       </div>
   </header>
   <!--End of Header -->
- 
-  <div class="w3-white" id="Product">
-    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="Product">
-      <h2 class="w3-wide w3-center" style="color: black">Product</h2>
-      <br>
-        <div class="w3-col m6 w3-padding-large w3-hide-small">
-  <% data.rows.forEach(function(item){ %>
-        <img src="images/<%= item.image %>" class="w3-round w3-image w3-opacity-min"  width="302" height="218">
-        </div>
-        <h4 style="color: black"><b><%= item.name %></b>
-                          <p><%= item.description %></p></h4>
-  <hr>
-
-  <%})%> 
   
         
 
