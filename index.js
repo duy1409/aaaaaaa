@@ -80,5 +80,8 @@ pool.connect(function(err, client, done){
 });
 app.get("/product/add", function(req,res){
 	res.render("add");
-})
+});
 
+app.get("/product/add", function(req,res){
+	res.send("ok");
+});
