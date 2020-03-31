@@ -39,5 +39,22 @@ app.get("/",function(req,res){
 });
 
 app.get("/product/list", function(req,res){
-	res.render("list");
+
+	pool.connect(function(err, client, done){
+		if(err){
+			return console.error('error fetching client from pool', err);
+		}
+		client.query('select * from product', function(err, result){
+			done();
+
+			if(err) {
+				res.end();
+				return console.error('error running query', err);
+
+			}
+			res.render("list",{data:result});
+		});
+
+	});
+	
 })

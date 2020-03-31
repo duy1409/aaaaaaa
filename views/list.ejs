@@ -31,13 +31,17 @@
   				</tr>
   			</thead>
   			<tbody>
+  				<% data.rows.forEach(function(item){  %>
   				<tr>
-  					<td>1</td>
-  					<td>toy</td>
-  					<td>toy aa</td>
-  					<td><img src="1.jpg" alt=""></td>
-  					<td><a href="edit"><span class="fa fa-edit">edit</span></a> - <a href="delete"><span class="fa fa-delete">delete</span></a></td>
+  					<td><%= item.id %></td>
+  					<td><%= item.name %></td>
+  					<td><%= item.description %></td>
+  					<td><img src="../images/logoSmall/<%= item.image %>" ></td>
+  					<td><a href="edit/<%= item.id %>"><span class="fa fa-edit">edit</span></a> - <a href="delete/<%= item.id %>"><span class="fa fa-delete">delete</span></a></td>
   				</tr>
+
+  			<% }) %>
+  				
   			</tbody>
   			
   		</table>
