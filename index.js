@@ -32,7 +32,7 @@ var storage = multer.diskStorage({
 
 })
 
-var upload = multer({ storage: storage }).single('uploadfile');
+var upload = multer({ storage: storage }).single('uploadfile1');
 
 var pool = new pg.Pool(config);
 
