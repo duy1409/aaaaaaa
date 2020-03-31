@@ -24,13 +24,14 @@ var multer = require('multer');
 
 var storage = multer.diskStorage({
 	destination: function (req, file, cb){
-		cb(null, '../../public/avatar')
+		cb(null, './public/avatar')
 	},
 	filename: function (req, file, cb) {
 		cb(null, file.originalname)
 	}
 
 })
+var storage = multer.memoryStorage();
 
 var upload = multer({ storage: storage }).single('uploadfile');
 
