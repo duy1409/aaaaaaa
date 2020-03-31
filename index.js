@@ -96,7 +96,7 @@ app.get("/product/add", function(req,res){
 });
 
 app.post("/product/add",urlencodedParser, function(req,res){
-	Upload(req, res, function (err) {
+	upload(req, res, function (err) {
 		if (err) {
 			res.send("error");
 		}else{
