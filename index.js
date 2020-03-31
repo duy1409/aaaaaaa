@@ -77,5 +77,5 @@ pool.connect(function(err, client, done){
 
 	});
 
-})
+});
 
