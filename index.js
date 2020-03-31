@@ -112,7 +112,7 @@ app.post("/product/add",urlencodeParser, function(req,res){
 		if(err){
 			return console.error('error fetching client from pool', err);
 		}
-		var sql = "insert into product (name, description, image) values('"+req.body.name+"','"+req.body.description+"','"+req.body.name+"','"+req.file.originalname+"')";
+		var sql = "insert into product (name, description, image) values('"+req.body.name+"','"+req.body.description+"','"+req.body.image+"','"+req.file.originalname+"')";
 		client.query(sql, function(err, result){
 			done();
 
