@@ -20,20 +20,6 @@ var bodyParser = require('body-parser');
 
 var urlencodeParser = bodyParser.urlencoded({ extended: false });
 
-var multer = require('multer');
-
-var storage = multer.diskStorage({
-	destination: function (req, file, cb){
-		cb(null, './public/avatar')
-	},
-	filename: function (req, file, cb) {
-		cb(null, file.originalname)
-	}
-
-})
-
-var upload = multer({ storage: storage }).single('uploadfile');
-
 var pool = new pg.Pool(config);
 
 app.get("/",function(req,res){
@@ -112,7 +98,7 @@ app.post("/product/add",urlencodeParser, function(req,res){
 		if(err){
 			return console.error('error fetching client from pool', err);
 		}
-		var sql = "insert into product (name, description, image) values('"+req.body.name+"','"+req.body.description+"','"+req.file.originalname+"')";
+		var sql = "insert into product (name, description) values('"+req.body.name+"','"+req.body.description+"')";
 		client.query(sql, function(err, result){
 			done();
 
