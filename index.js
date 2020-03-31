@@ -27,7 +27,7 @@ var storage = multer.diskStorage({
   }
 })
 
-var upload = multer({ storage: storage }).single('uploadfile');
+var upload = multer({ storage: storage }).single('upload');
 
 var pool = new pg.Pool(config);
 
@@ -96,7 +96,7 @@ app.get("/product/add", function(req,res){
 });
 
 app.post("/product/add",urlencodedParser, function(req,res){
-	upload(req, res, function (err){
+	upload(req, res, function (err) {
 		if (err) {
 			res.send("error");
 		}else{
