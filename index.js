@@ -59,7 +59,7 @@ app.get("/product/list", function(req,res){
 	
 });
 
-app.get("/product/list/:id", function(req,res){
+app.get("/product/delete/:id", function(req,res){
 pool.connect(function(err, client, done){
 		if(err){
 			return console.error('error fetching client from pool', err);
@@ -72,7 +72,7 @@ pool.connect(function(err, client, done){
 				return console.error('error running query', err);
 
 			}
-			res.redirect("../../product/list");
+			res.redirect("../list");
 		});
 
 	});
