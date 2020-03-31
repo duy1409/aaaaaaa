@@ -98,7 +98,7 @@ app.get("/product/add", function(req,res){
 app.post("/product/add",urlencodedParser, function(req,res){
 	upload(req, res, function (err) {
 		if (err) {
-			res.send("error");
+			res.send("loi");
 		}else{
 			res.send("ok");
 		}
