@@ -72,7 +72,7 @@ pool.connect(function(err, client, done){
 				return console.error('error running query', err);
 
 			}
-			res.redirect("../list");
+			res.redirect("../product/list");
 		});
 
 	});
