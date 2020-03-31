@@ -24,7 +24,7 @@ var multer = require('multer');
 
 var storage = multer.diskStorage({
 	destination: function (req, file, cb){
-		cb(null, './upload')
+		cb(null, 'C:/New folder/aaaaaaa/upload')
 	},
 	filename: function (req, file, cb) {
 		cb(null, file.originalname)
