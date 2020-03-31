@@ -128,8 +128,8 @@ app.post("/product/add",urlencodeParser, function(req,res){
 			}
 			
 		}
-	})
-})
+	});
+});
 
 app.get("/product/edit/:id",function(req,res){
 	var id = req.params.id;
