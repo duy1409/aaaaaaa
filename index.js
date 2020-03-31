@@ -36,4 +36,8 @@ app.get("/",function(req,res){
 
 	});
 	
+});
+
+app.get("/product/list", function(req,res){
+	res.render("list");
 })
