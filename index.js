@@ -128,23 +128,7 @@ app.post("/product/add",urlencodeParser, function(req,res){
 			}
 			
 		}
-	});
-});
+	})
+})
 
-app.get("/product/edit/:id",function(req,res){
-	var id = req.params.id;
-	pool.connect(function(err, client, done){
-		if (err) {
-			return console.error('error fetching client from pool', err);
-		}
-		client.query('SELECT * FROM product WHERE id='+id, function(err, result){
-			done();
-			if (err) {
-				res.end();
-				return console.error('error running query', err);
-			}
-			res.render("edit",{data:result.row[0]});
-		});
-	});
-});
 
