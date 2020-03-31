@@ -20,7 +20,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var multer  = require('multer');
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './Upload')
+    cb(null, 'aaaaaaa/Upload')
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname)
