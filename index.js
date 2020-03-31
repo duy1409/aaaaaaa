@@ -15,7 +15,8 @@ var config = {
 	idleTimeoutMillis: 30000,
 
 };
-var pool = new pg.pool(config);
+
+var pool = new pg.Pool(config);
 
 app.get("/",function(req,res){
 	pool.connect(function(err, client, done){
