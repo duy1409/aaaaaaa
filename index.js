@@ -78,7 +78,7 @@ pool.connect(function(err, client, done){
 	});
 
 });
-app.get("/video/add", function(req,res){
+app.get("/product/add", function(req,res){
 	res.render("add");
 })
 
