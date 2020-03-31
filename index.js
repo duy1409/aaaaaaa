@@ -15,6 +15,20 @@ var config = {
 	idleTimeoutMillis: 30000,
 
 };
+var bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+var multer  = require('multer');
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './upload')
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+    cb(null, file.originalname)
+  }
+})
+
+var upload = multer({ storage: storage }).single('uploadfile');
 
 var pool = new pg.Pool(config);
 
@@ -82,6 +96,12 @@ app.get("/product/add", function(req,res){
 	res.render("add");
 });
 
-app.post("/product/add", function(req,res){
-	res.send("ok");
-});
+app.post("/product/add",urlencodedParser, function(req,res){
+	upload(req, res, function (err){
+		if (err) {
+			res.send("error");
+		}else{
+			res.send("ok");
+		}
+	})
+})
