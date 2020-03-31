@@ -110,4 +110,4 @@ app.post("/product/add",urlencodedParser, function(req,res){
     
   })
 	
- })
+ });
