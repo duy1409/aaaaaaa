@@ -7,7 +7,7 @@ app.listen(process.env.PORT || 3000);
 var pg = require('pg');
 var config = {
 	user: 'lxfkuxyihgnmcj',
-	database: 'd95h9e01g63aq3',
+	database: 'asm2',
 	password: '434f2a37175435987ff30e6cbce21a2b134cc12c14069ddf29cff7fd8142097a',
 	host: 'ec2-18-235-97-230.compute-1.amazonaws.com',
 	port: 5432,
