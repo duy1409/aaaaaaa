@@ -57,4 +57,25 @@ app.get("/product/list", function(req,res){
 
 	});
 	
+});
+
+app.get("/product/list/:id", function(req,res){
+pool.connect(function(err, client, done){
+		if(err){
+			return console.error('error fetching client from pool', err);
+		}
+		client.query('delete from product where id ='+req.params.id, function(err, result){
+			done();
+
+			if(err) {
+				res.end();
+				return console.error('error running query', err);
+
+			}
+			res.redirect("../list");
+		});
+
+	});
+
 })
+
