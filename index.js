@@ -104,6 +104,7 @@ app.post("/product/add",urlencodedParser, function(req,res){
 			res.send("loi");
 		}else{
 			res.send("ok");
+			console.log(req.file);
 		}
 	})
 })
